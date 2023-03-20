@@ -2,7 +2,7 @@ package ch.unisg.ems.sales.config;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
-import ch.unisg.ems.sales.dto.CamundaMessageDto;
+import ch.unisg.ems.sales.dto.CamundaOfferDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +25,7 @@ public class KafkaProducerConfig {
     private String trustedPackage;
 
     @Bean
-    public ProducerFactory<String, CamundaMessageDto> producerFactory() {
+    public ProducerFactory<String, CamundaOfferDto> producerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
@@ -41,7 +41,7 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, CamundaMessageDto> kafkaTemplate() {
+    public KafkaTemplate<String, CamundaOfferDto> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 }

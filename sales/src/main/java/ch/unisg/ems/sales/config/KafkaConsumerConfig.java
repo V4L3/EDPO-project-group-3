@@ -2,7 +2,7 @@ package ch.unisg.ems.sales.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import ch.unisg.ems.sales.dto.CamundaMessageDto;
+import ch.unisg.ems.sales.dto.CamundaOfferDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +29,7 @@ public class KafkaConsumerConfig {
     private String trustedPackage;
 
     @Bean
-    public ConsumerFactory<String, CamundaMessageDto> consumerFactory() {
+    public ConsumerFactory<String, CamundaOfferDto> consumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(
                 ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
@@ -48,10 +48,10 @@ public class KafkaConsumerConfig {
     }
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, CamundaMessageDto>
+    public ConcurrentKafkaListenerContainerFactory<String, CamundaOfferDto>
     kafkaListenerContainerFactory() {
 
-        ConcurrentKafkaListenerContainerFactory<String, CamundaMessageDto> factory =
+        ConcurrentKafkaListenerContainerFactory<String, CamundaOfferDto> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         return factory;

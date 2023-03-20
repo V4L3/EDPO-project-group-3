@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@EnableProcessApplication("application")
+@EnableProcessApplication
 public class SalesApplication {
 
   public static void main(String[] args) {

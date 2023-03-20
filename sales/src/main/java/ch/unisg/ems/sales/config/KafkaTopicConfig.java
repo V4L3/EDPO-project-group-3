@@ -24,13 +24,13 @@ public class KafkaTopicConfig {
     }
 
     @Bean
-    public NewTopic startProcessMessageTopic() {
-        return new NewTopic("start-process-message-topic", 1, (short) 1);
+    public NewTopic requestOfferMessageTopic() {
+        return new NewTopic("request-offer-message-topic", 1, (short) 1);
     }
 
     @Bean
-    public NewTopic intermediateMessageTopic() {
-        return new NewTopic("intermediate-message-topic", 1, (short) 1);
+    public NewTopic acceptOfferMessageTopic() {
+        return new NewTopic("offer-accepted-message-topic", 1, (short) 1);
     }
 
     @Bean
