@@ -18,7 +18,7 @@
       <bpmn:messageEventDefinition id="MessageEventDefinition_1d5h7r0" messageRef="Message_1jt4yci" />
     </bpmn:intermediateCatchEvent>
     <bpmn:sequenceFlow id="Flow_0ehw2mw" sourceRef="Activity_0tcd2jw" targetRef="Event_1utedw3" />
-    <bpmn:serviceTask id="Activity_0tcd2jw" name="Publish Result Message" camunda:class="ch.unisg.powerconsumption.inventory.delegate.MessageDelegate">
+    <bpmn:serviceTask id="Activity_0tcd2jw" name="Publish Result Message" camunda:class="ch.unisg.ems.inventory.delegate.MessageDelegate">
       <bpmn:incoming>Flow_0r4rs2a</bpmn:incoming>
       <bpmn:outgoing>Flow_0ehw2mw</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -48,7 +48,7 @@
         <bpmn:incoming>Flow_08sj9w7</bpmn:incoming>
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="Flow_08sj9w7" sourceRef="Activity_0auuzip" targetRef="Event_0w2clca" />
-      <bpmn:serviceTask id="Activity_0auuzip" name="Some Task" camunda:class="ch.unisg.powerconsumption.inventory.delegate.MessageDelegate">
+      <bpmn:serviceTask id="Activity_0auuzip" name="Some Task" camunda:class="ch.unisg.ems.inventory.delegate.MessageDelegate">
         <bpmn:incoming>Flow_13kojmo</bpmn:incoming>
         <bpmn:outgoing>Flow_08sj9w7</bpmn:outgoing>
       </bpmn:serviceTask>

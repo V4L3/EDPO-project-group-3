@@ -1,10 +1,10 @@
-package ch.unisg.ems.inventory.delegate;
+package ch.unisg.ems.sales.delegate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ch.unisg.ems.inventory.dto.CamundaMessageDto;
-import ch.unisg.ems.inventory.util.VariablesUtil;
+import ch.unisg.ems.sales.dto.CamundaMessageDto;
+import ch.unisg.ems.sales.util.VariablesUtil;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.kafka.core.KafkaTemplate;

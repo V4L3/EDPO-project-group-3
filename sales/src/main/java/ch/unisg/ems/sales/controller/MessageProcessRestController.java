@@ -1,7 +1,7 @@
-package ch.unisg.ems.inventory.controller;
+package ch.unisg.ems.sales.controller;
 
 import lombok.RequiredArgsConstructor;
-import ch.unisg.ems.inventory.dto.CamundaMessageDto;
+import ch.unisg.ems.sales.dto.CamundaMessageDto;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

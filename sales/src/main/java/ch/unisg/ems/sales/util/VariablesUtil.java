@@ -1,9 +1,10 @@
-package ch.unisg.ems.inventory.util;
+package ch.unisg.ems.sales.util;
 
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
-import ch.unisg.ems.inventory.dto.CamundaMessageDto;
-import ch.unisg.ems.inventory.dto.MessageProcessDto;
+import ch.unisg.ems.sales.dto.CamundaMessageDto;
+import ch.unisg.ems.sales.dto.MessageProcessDto;
+import org.camunda.bpm.engine.variable.VariableMap;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

@@ -1,8 +1,8 @@
-package ch.unisg.ems.inventory.config;
+package ch.unisg.ems.sales.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import ch.unisg.ems.inventory.dto.CamundaMessageDto;
+import ch.unisg.ems.sales.dto.CamundaMessageDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

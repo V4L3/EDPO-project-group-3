@@ -1,8 +1,8 @@
-package ch.unisg.ems.inventory.consumer;
+package ch.unisg.ems.sales.consumer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ch.unisg.ems.inventory.dto.CamundaMessageDto;
+import ch.unisg.ems.sales.dto.CamundaMessageDto;
 import org.camunda.bpm.engine.RuntimeService;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;

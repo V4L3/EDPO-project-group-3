@@ -1,7 +1,7 @@
-package ch.unisg.ems.inventory.dto;
+package ch.unisg.ems.sales.dto;
 
 import lombok.*;
-import ch.unisg.ems.inventory.dto.MessageProcessDto;
+import ch.unisg.ems.sales.dto.MessageProcessDto;
 
 import java.io.Serializable;
 

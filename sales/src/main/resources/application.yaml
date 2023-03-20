@@ -9,4 +9,7 @@ camunda.bpm:
 kafka:
   bootstrap-address: localhost:9092
   group-id: someGroupId
-  trusted-packages: ch.unisg.ems.inventory.dto
+  trusted-packages: ch.unisg.ems.sales.dto
+
+server:
+  port: 8083

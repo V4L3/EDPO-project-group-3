@@ -1,4 +1,4 @@
-package ch.unisg.ems.inventory.dto;
+package ch.unisg.ems.sales.dto;
 
 import lombok.*;
 
