@@ -2,15 +2,15 @@
 A sample Camunda process that interacts with Kafka. 
 
 ## Show me the important parts!
-![BPMN Process](src/main/resources/process.png)
+![BPMN Process](EDPO-Event-driven/EDPO-project-group-3/demo/src/main/resources/process.png)
 
 ## How does it work?
 
-The application has a [Rest API Controller](src/main/java/org/camunda/bpm/demo/controller/MessageProcessRestController.java) that posts messages in two topics: **start-process-message-topic** and **intermediate-message-topic**. The request body of the api uses the POJO [CamundaMessageDto](src/main/java/org/camunda/bpm/demo/dto/CamundaMessageDto.java).
+The application has a [Rest API Controller](EDPO-Event-driven/EDPO-project-group-3/demo/src/main/java/org/camunda/bpm/demo/controller/MessageProcessRestController.java) that posts messages in two topics: **start-process-message-topic** and **intermediate-message-topic**. The request body of the api uses the POJO [CamundaMessageDto](EDPO-Event-driven/EDPO-project-group-3/demo/src/main/java/org/camunda/bpm/demo/dto/CamundaMessageDto.java).
 
-Those two topics are also listened by two methods in a [Consumer Class](src/main/java/org/camunda/bpm/demo/consumer/MessageProcessConsumer.java). One method can trigger a message start and another a message intermediate event.
+Those two topics are also listened by two methods in a [Consumer Class](EDPO-Event-driven/EDPO-project-group-3/demo/src/main/java/org/camunda/bpm/demo/consumer/MessageProcessConsumer.java). One method can trigger a message start and another a message intermediate event.
 
-The functionality to correlate a Camunda message is available in the [Message Service Class](src/main/java/org/camunda/bpm/demo/consumer/MessageService.java).
+The functionality to correlate a Camunda message is available in the [Message Service Class](EDPO-Event-driven/EDPO-project-group-3/demo/src/main/java/org/camunda/bpm/demo/consumer/MessageService.java).
 
 Last but not least, the service task after the intermediate message posts a message back into Kafka in the topic **service-task-message-topic**.
 
@@ -24,7 +24,7 @@ Start Apache Kafka using the provided [docker-compose](/docker/docker-compose.ym
 ```bash
 $ docker/docker-compose up
 ```
-The topics configuration is done automatically by the class [KafkaTopicConfig](src/main/java/org/camunda/bpm/demo/config/KafkaTopicConfig.java).
+The topics configuration is done automatically by the class [KafkaTopicConfig](EDPO-Event-driven/EDPO-project-group-3/demo/src/main/java/org/camunda/bpm/demo/config/KafkaTopicConfig.java).
 
 You can start by running a POST against the endpoint **http://localhost:8080/message-process/start**:
 
@@ -39,7 +39,7 @@ You can start by running a POST against the endpoint **http://localhost:8080/mes
 }
 ```
 
-This will create an instance of the process showed above by posting a message to a topic "start-process-message-topic". This message is picked up by the listener in the class [MessageProcessConsumer](src/main/java/org/camunda/bpm/demo/consumer/MessageProcessConsumer.java) and will correlate the start event message event.
+This will create an instance of the process showed above by posting a message to a topic "start-process-message-topic". This message is picked up by the listener in the class [MessageProcessConsumer](EDPO-Event-driven/EDPO-project-group-3/demo/src/main/java/org/camunda/bpm/demo/consumer/MessageProcessConsumer.java) and will correlate the start event message event.
 
 You can finish the intermediate message by running a POST against the endpoint **http://localhost:8080/message-process/intermediate**
 
